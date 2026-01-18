@@ -1002,7 +1002,24 @@
             initPage();
             
             // Check login status
-            checkLoginStatus();
+            // --- Replace your old checkLoginStatus with this ---
+function checkLoginStatus() {
+    const userData = localStorage.getItem('owl_user');
+    
+    if (userData) {
+        const user = JSON.parse(userData);
+        console.log('User detected, redirecting...');
+
+        // This handles the automatic jump to the dashboard
+        if (user.role === 'staff') {
+            window.location.href = 'user-admin-dashboard.html';
+        } else if (user.role === 'admin') {
+            window.location.href = 'admin-dashboard.html';
+        } else if (user.role === 'customer') {
+            window.location.href = 'customer-dashboard.html';
+        }
+    }
+}
             
             // Setup event listeners
             setupEventListeners();
@@ -1289,4 +1306,5 @@
         }
     </style>
 </body>
+
 </html>
