@@ -1012,7 +1012,7 @@ function checkLoginStatus() {
 
         // This handles the automatic jump to the dashboard
         if (user.role === 'staff') {
-            window.location.href = 'user-admin-dashboard.html';
+            window.location.href = 'staff-dashboard.html';
         } else if (user.role === 'admin') {
             window.location.href = 'admin-dashboard.html';
         } else if (user.role === 'customer') {
@@ -1308,3 +1308,4 @@ function checkLoginStatus() {
 </body>
 
 </html>
+
